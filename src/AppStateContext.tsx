@@ -89,6 +89,7 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
     
 
 const appData: AppState = {
+    draggedItem: undefined,
     lists: [
         {
             id: "0",

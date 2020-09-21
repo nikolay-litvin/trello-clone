@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const AppContainer = styled.div`
     align-items: flex-start;
     background-color: #3179ba;
@@ -10,7 +11,16 @@ export const AppContainer = styled.div`
     width: 100%100%;
 `
 
-export const ColumnContainer = styled.div`
+
+interface DragPreviewContainerProps {
+    isHidden?: boolean
+}
+
+export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
+    opacity: ${props => (props.isHidden ? 0.3 : 1)};
+`
+
+export const ColumnContainer = styled(DragPreviewContainer)`
     background-color: #ebecf0;
     width: 300 px;
     min-height: 40px;
@@ -79,3 +89,4 @@ export const NewItemInput = styled.input`
     padding: 0.5rem 1rem;
     width: 100%;
 `
+
